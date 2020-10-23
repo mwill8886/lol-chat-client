@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Component Imports
 import StatusSelector from './status-selector';
+import Messege from './messege';
 
 // Images
 import send from '../images/send.png';
@@ -15,21 +16,13 @@ const Frame = () => {
         <ComponentWrapper className="bevel">
             <StatusSelector />
             <ChatWindow className="bevel">
-                <Messege>
-                    <User>SomebodyElse</User>
-                    <Content>How much do you like dogs?</Content>
+                <Messege user="username">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 </Messege>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat dui, pellentesque suscipit semper id, tempor at arcu. Vivamus blandit ut lectus id semper. Phasellus efficitur lorem vitae dictum tincidunt. Aliquam erat volutpat. Pellentesque sagittis mauris et mauris lacinia convallis. Nunc in lorem non neque fermentum aliquam a eget turpis. Quisque aliquam ornare tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer euismod justo non turpis bibendum convallis.
-
-Cras sem odio, laoreet id mi vitae, semper interdum erat. Nunc id tortor quis tortor molestie facilisis. Nullam facilisis ultrices urna, vitae suscipit est rhoncus vel. Aliquam vulputate pellentesque lorem, eget pulvinar dui consequat eu. Cras lobortis facilisis aliquam. Nunc vitae elit sagittis, imperdiet metus sit amet, pharetra lorem. Sed rutrum sem at placerat lobortis. Aenean consectetur consequat felis ut interdum. Aliquam quis metus eget diam rutrum sodales. Sed laoreet lorem turpis, nec finibus nulla condimentum sit amet. Donec leo massa, condimentum in efficitur at, sagittis a turpis.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat dui, pellentesque suscipit semper id, tempor at arcu. Vivamus blandit ut lectus id semper. Phasellus efficitur lorem vitae dictum tincidunt. Aliquam erat volutpat. Pellentesque sagittis mauris et mauris lacinia convallis. Nunc in lorem non neque fermentum aliquam a eget turpis. Quisque aliquam ornare tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer euismod justo non turpis bibendum convallis.
-
-Cras sem odio, laoreet id mi vitae, semper interdum erat. Nunc id tortor quis tortor molestie facilisis. Nullam facilisis ultrices urna, vitae suscipit est rhoncus vel. Aliquam vulputate pellentesque lorem, eget pulvinar dui consequat eu. Cras lobortis facilisis aliquam. Nunc vitae elit sagittis, imperdiet metus sit amet, pharetra lorem. Sed rutrum sem at placerat lobortis. Aenean consectetur consequat felis ut interdum. Aliquam quis metus eget diam rutrum sodales. Sed laoreet lorem turpis, nec finibus nulla condimentum sit amet. Donec leo massa, condimentum in efficitur at, sagittis a turpis.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat dui, pellentesque suscipit semper id, tempor at arcu. Vivamus blandit ut lectus id semper. Phasellus efficitur lorem vitae dictum tincidunt. Aliquam erat volutpat. Pellentesque sagittis mauris et mauris lacinia convallis. Nunc in lorem non neque fermentum aliquam a eget turpis. Quisque aliquam ornare tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer euismod justo non turpis bibendum convallis.
-
-Cras sem odio, laoreet id mi vitae, semper interdum erat. Nunc id tortor quis tortor molestie facilisis. Nullam facilisis ultrices urna, vitae suscipit est rhoncus vel. Aliquam vulputate pellentesque lorem, eget pulvinar dui consequat eu. Cras lobortis facilisis aliquam. Nunc vitae elit sagittis, imperdiet metus sit amet, pharetra lorem. Sed rutrum sem at placerat lobortis. Aenean consectetur consequat felis ut interdum. Aliquam quis metus eget diam rutrum sodales. Sed laoreet lorem turpis, nec finibus nulla condimentum sit amet. Donec leo massa, condimentum in efficitur at, sagittis a turpis.
+                <Messege user="username2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate ullamcorper magna. 
+                </Messege>
+                
             </ChatWindow>
             <form onSubmit={()=> alert('submit')}>
                 <TextArea className="bevel"></TextArea>
@@ -54,14 +47,8 @@ const ComponentWrapper = styled.div`
     background-color: #c3c3c3;
 `;
 
-
-
-const Messege = styled.div`
-`;
-const User = styled.div``;
-const Content = styled.div``;
-
 const ChatWindow = styled.div`
+    padding: 0px 8px;
     margin-bottom: 11px;
     height: 288px;
     background-color: #ffffff;

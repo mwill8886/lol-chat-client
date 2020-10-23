@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import styled from 'styled-components';
 
 const StatusArr = [
@@ -21,7 +21,7 @@ const StatusSelector = () => {
     }
 
     return(
-        <Select className="bevel" onClick={() => setIsOpen(!isOpen)}>
+        <ComponentWrapper className="bevel" onClick={() => setIsOpen(!isOpen)}>
             <Selection>
                 <Indicator color={status.color}/>
                 <span>{status.state}</span>
@@ -37,7 +37,7 @@ const StatusSelector = () => {
                     <div onClick={() => handleSelect(2)}><Indicator color={StatusArr[2].color}/>Eating Pizza</div>
                 </DropdownSelection>
             }
-        </Select>
+        </ComponentWrapper>
     );
 }
 
@@ -46,7 +46,7 @@ export default StatusSelector;
 
 // Styles
 
-const Select = styled.div`
+const ComponentWrapper = styled.div`
     cursor:pointer;
     min-height: 38px;
     margin-bottom: 11px;
