@@ -1,26 +1,42 @@
+// Dependencies
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
 
-function App() {
+// Component Imports
+import Header from './components/header';
+import Frame from './components/frame';
+
+// Component
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ComponentWrapper>
+      <CenteredContent>
+        <Header/>
+        <Frame/>
+      </CenteredContent>
+    </ComponentWrapper>
   );
 }
 
 export default App;
+
+
+// Note: I could have just copied the styles from Figma, but the visual results were different. 
+// So I ended up just trying to match what it looked like in the wireframe.
+
+
+// Styles
+
+const ComponentWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(5, 2, 145); 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+`;
+
+const CenteredContent = styled.div`
+  min-width: 5px;
+  min-height: 5px;
+`;
