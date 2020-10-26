@@ -39,8 +39,6 @@ const ChatInput = (props) => {
     
             // scroll chat window
             const chatWindow = document.getElementById("messege-viewer");
-            console.log(chatWindow.scrollHeight);
-            console.log(chatWindow.scrollTop);
             chatWindow.scrollTop = (chatWindow.scrollHeight + 100);
             setIsSending(false);
         },1000);
@@ -55,10 +53,13 @@ const ChatInput = (props) => {
                 {props.isSending  
                     ?<>
                         <span>Sending...</span>
-                        <LoadingBar />
+                        
                     </>
-                    :<span>Send</span>
+                    : <>
+                        <span>Send</span>
+                    </>
                 }
+                <LoadingBar isSending={props.isSending}/>
             </SendButton>
         </form>
     )
