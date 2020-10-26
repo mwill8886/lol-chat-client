@@ -1,36 +1,44 @@
 // Dependencies
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 // Component Imports
 import StatusSelector from './status-selector';
 import Messege from './messege';
+import ChatInput from './chat-input';
 
 // Images
-import send from '../images/send.png';
-import sending from '../images/sending.png';
+import Up from '../images/arrow-up.png';
+import Down from '../images/arrow-down.png';
+
+// TODO: Create node server with socket.io to add real chat functionality
+// TODO: Create login/username form on start for starting user session with custom name
+// TODO: When sound file is found - play AOL notification sound when msg received
+// TODO: Add draggable and resizable functionality to the Frame component
 
 // Component
 const Frame = () => {
+    const [messegeList, setMessegeList] = useState([]);
+    const [isSending, setIsSending] = useState(false);
+
     return(
         <ComponentWrapper className="bevel">
             <StatusSelector />
-            <ChatWindow className="bevel">
-                <Messege user="username">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                </Messege>
-                <Messege user="username2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate ullamcorper magna. 
-                </Messege>
-                
+            <ChatWindow className="bevel" id="messege-viewer">
+                {
+                    messegeList.map( (msg, index) => {
+                        return(
+                            <Messege key={`chat-msg-${index}`} user={msg.user}>{msg.messege}</Messege>
+                        )
+                    })
+                }
             </ChatWindow>
-            <form onSubmit={()=> alert('submit')}>
-                <TextArea className="bevel"></TextArea>
-                <SendButton type='submit'>
-                    <img src={sending} alt="send"/>
-                    <span>Send</span>
-                </SendButton>
-            </form>
+            <ChatInput 
+                isSending={isSending} 
+                setIsSending={setIsSending} 
+                messegeList={messegeList} 
+                setMessegeList={setMessegeList}
+            />
         </ComponentWrapper>
     )
 };
@@ -53,44 +61,62 @@ const ChatWindow = styled.div`
     height: 288px;
     background-color: #ffffff;
     overflow-y: scroll;
-`;
 
-const TextArea = styled.textarea`
-    cursor: text;
+    /* Scrollbar styles */
+    /* Please note, I do not think extensively overriding the native scrollbars is a good idea */
+
+    /* width */
+    ::-webkit-scrollbar {
+    width: 39px;
     display: block;
-    margin-bottom: 11px;
-    width: 100%;
-    min-height: 64px;
-    background-color: #ffffff;
-`;
-
-const SendButton = styled.button`
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    float: right;
-
-    & > img {
-        filter: grayscale(100%);
-        margin-bottom: 5px;
     }
 
-    & > span {
-        font-weight: bold;
-        opacity: .5;
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    padding-right: 10px;
     }
 
-    &:hover {
-        img {
-            filter: grayscale(0%);
-        }
-        span {
-            opacity: 1;
-        }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #e5e5e5;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #828282;
+    border-right: 2px solid #828282;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
     }
 
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+    }
 
+    ::-webkit-scrollbar-button {
+    width: 36px;
+    height: 36px;
+    margin-right: 2px;
+    background-color: #e5e5e5;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #828282;
+    border-right: 2px solid #828282;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
+    }
+
+    ::-webkit-scrollbar-button:hover {
+    background: #cccccc;
+    }
+
+    ::-webkit-scrollbar-button:decrement {
+        background-image: url(${Up});
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    ::-webkit-scrollbar-button:increment {
+        background-image: url(${Down});
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 `;

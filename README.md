@@ -22,9 +22,9 @@ The nickname should just be hard-coded to a default.
 ### Stretch Goals
 
 - [ ] Draggable and resizable chat window
-- [ ] Animated loading bar
-- [ ] Play AOL send sound when the message is sent
-- [ ] Play notification sound when a message is received
-- [ ] Adjust favicon to AOL
+- [x] Animated loading bar
+- [ ] Play AOL send sound when the message is sent - *cant find yet*
+- [ ] Play notification sound when a message is received  - *cant find yet*
+- [x] Adjust favicon to AOL
 - [ ] Log in screen for users to enter session
 - [ ] Node/Express backend with SocketIO for real chat functionality

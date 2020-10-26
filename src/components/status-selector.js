@@ -2,22 +2,22 @@
 import React, { useState} from 'react';
 import styled from 'styled-components';
 
-const StatusArr = [
-    { state: 'Im offline', color: '#DF251D'}, 
-    {state: 'Im busy', color: '#F8A811'},
-    {state: 'Im eating pizza', color: '#40C28D'}
-];
-
 
 // Component
 const StatusSelector = () => {
+    const StatusArr = [
+        { state: 'Im offline', color: '#DF251D'}, 
+        {state: 'Im busy', color: '#F8A811'},
+        {state: 'Im eating pizza', color: '#40C28D'}
+    ];
+
     const [isOpen, setIsOpen] = useState(false);
     const [status, setStatus] = useState(StatusArr[2]);
 
     const handleSelect = (input) => {
         const newStatus = StatusArr[`${input}`]
         setStatus(newStatus);
-        // update state with server
+        // TODO: Update state on server
     }
 
     return(
