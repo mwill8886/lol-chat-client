@@ -24,7 +24,7 @@ const ChatInput = (props) => {
             
             // TODO: Check users status and display the receiving usres status on send
             // TODO: if that receiving users status is 'busy' or 'offline'
-            const userValue = messegeList.length % 2 == 0 ? 'username2' : 'username';
+            const userValue = messegeList.length % 2 == 0 ? 'username' : 'username2';
             
             const newMsg = {user: userValue, messege: inputValue};
             const list = [...messegeList];
