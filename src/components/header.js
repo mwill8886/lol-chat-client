@@ -33,7 +33,7 @@ export default Header;
 // Styles
 
 const ComponentWrapper = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 `;
 
 const Logo = styled.img`

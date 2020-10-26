@@ -49,7 +49,7 @@ const ChatInput = (props) => {
 
     return(
         <form onSubmit={(e)=> handleSubmit(e)}>
-            <TextArea type="text" name="chat" id="messege-input" className="bevel"/>
+            <TextArea name="chat" id="messege-input" className="bevel"/>
             <SendButton type='submit' isSending={props.isSending} disabled={false}>
                 <img src={sendingImg} alt="send"/>
                 {props.isSending  
@@ -78,6 +78,7 @@ const TextArea = styled.textarea`
     width: 100%;
     min-height: 64px;
     background-color: #ffffff;
+    resize: none;
 `;
 
 const SendButton = styled.button`

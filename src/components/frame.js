@@ -53,6 +53,8 @@ const ComponentWrapper = styled.div`
     height: 542px;
     padding: 11px;
     background-color: #c3c3c3;
+    border-bottom: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
 `;
 
 const ChatWindow = styled.div`
@@ -67,46 +69,45 @@ const ChatWindow = styled.div`
 
     /* width */
     ::-webkit-scrollbar {
-    width: 39px;
-    display: block;
+        width: 39px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-    background: #e5e5e5;
-    padding-right: 10px;
+        background: #e5e5e5;
+        padding-right: 10px;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-    background: #e5e5e5;
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #828282;
-    border-right: 2px solid #828282;
-    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
+        background: #e5e5e5;
+        border-top: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+        border-bottom: 2px solid #828282;
+        border-right: 2px solid #828282;
+        /* box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1); */
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-    background: #cccccc;
+        background: #cccccc;
     }
 
     ::-webkit-scrollbar-button {
-    width: 36px;
-    height: 36px;
-    margin-right: 2px;
-    background-color: #e5e5e5;
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #828282;
-    border-right: 2px solid #828282;
-    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
-    margin-bottom: 20px;
+        width: 36px;
+        height: 36px;
+        margin-right: 2px;
+        background-color: #e5e5e5;
+        border-top: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+        border-bottom: 2px solid #828282;
+        border-right: 2px solid #828282;
+        /* box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1); */
+        margin-bottom: 20px;
     }
 
     ::-webkit-scrollbar-button:hover {
-    background: #cccccc;
+        background: #cccccc;
     }
 
     ::-webkit-scrollbar-button:decrement {
