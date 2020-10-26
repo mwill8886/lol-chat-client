@@ -1,5 +1,7 @@
 # LOL Chat Client
 
+## Description  
+
 The frontend to a simple chatroom app in ReactJS that matches the provided figma design.  
 
 It should give you a box to type chat messages into (with a send button), 
@@ -28,3 +30,19 @@ The nickname should just be hard-coded to a default.
 - [x] Adjust favicon to AOL
 - [ ] Log in screen for users to enter session
 - [ ] Node/Express backend with SocketIO for real chat functionality
+
+---
+
+## Development
+
+This project was created using the following basic tools:   
+- create-react-app
+- styled-components
+
+
+### Starting the project
+
+In order to start the current iteration of the project open the terminal from the root directory of the project (contains the package.json) and run `npm run start` to start the project in dev mode which will open the project on `localhost:3000`.
+
+### Building the project
+In order to create the build files for the project open the terminal from the root directory of the project (contains the package.json) and run `npm run build` and it will output the production ready file into the `build` directory.
